@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head', { title: "Show Recipe"})%>
+  <body>
+    <div class="container">
+      <h1 class="mb-1"><%= recipe.title %></h1>
+      <div class="text-muted mb-2">
+        Recipe Added: <%= recipe.createdAt.toLocaleDateString() %>
+      </div>
+      <div class="row mb-3 mt-3">
+        <div class="col">Prep Time: <%- recipe.prepTime %></div>
+        <div class="col">Bake Time: <%- recipe.bakeTime %></div>
+        <div class="col">Bake Temp: <%- recipe.bakeTemp %></div>
+      </div>
+      <h3>Description</h3>
+      <div class="mb-3"><%- recipe.description %></div>
+      <h3>Ingredients</h3>
+      <div class="mb-3"><%- recipe.sanitizedIngredients %></div>
+      <h3>Method</h3>
+      <div class="mb-3"><%- recipe.sanitizedMethod %></div>
+      <a href="/" class="btn btn-secondary">All Recipes</a>
+      <a href="/recipes/edit/<%= recipe.id %>" class="btn btn-info">Edit</a>
+    </div>
+  </body>
+</html>

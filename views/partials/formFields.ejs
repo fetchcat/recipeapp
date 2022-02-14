@@ -1,0 +1,81 @@
+<select id="category" name="category">
+  <% categories.forEach(function(cat){ %>
+  <option><%- cat.name, { categories: categories } %></option>
+  <% }) %>
+</select>
+<div class="form-group mb-3">
+  <label for="title">Title</label>
+  <input
+    required
+    value="<%= recipe.title %>"
+    type="text"
+    name="title"
+    id="title"
+    class="form-control"
+  />
+</div>
+<div class="form-group mb-3">
+  <label for="description">Description</label>
+  <input
+    required
+    value="<%= recipe.description %>"
+    type="text"
+    name="description"
+    id="description"
+    class="form-control"
+  />
+</div>
+<div class="row">
+  <div class="col mb-3">
+    <label for="prepTime">Prep Time:</label>
+    <input
+      value="<%= recipe.prepTime %>"
+      type="text"
+      name="prepTime"
+      id="prepTime"
+      class="form-control"
+    />
+  </div>
+  <div class="col mb-3">
+    <label for="cookTime">Bake Time:</label>
+    <input
+      value="<%= recipe.bakeTime %>"
+      type="text"
+      name="bakeTime"
+      id="bakeTime"
+      class="form-control"
+    />
+  </div>
+  <div class="col mb-3">
+    <label for="bakeTemp">Bake Temp:</label>
+    <input
+      value="<%= recipe.bakeTemp %>"
+      type="text"
+      name="bakeTemp"
+      id="bakeTemp"
+      class="form-control"
+    />
+  </div>
+</div>
+<div class="form-group mb-3">
+  <label for="ingredients">Ingredients</label>
+  <textarea
+    required
+    name="ingredients"
+    id="ingredients"
+    class="form-control"
+    rows="5"
+  >
+<%= recipe.ingredients %></textarea
+  >
+</div>
+
+<div class="form-group mb-3">
+  <label for="method">Method</label>
+  <textarea required name="method" id="method" class="form-control" rows="5">
+<%= recipe.method %></textarea
+  >
+</div>
+
+<a href="/" class="btn btn-secondary">Cancel</a>
+<button type="submit" class="btn btn-primary">Save</button>

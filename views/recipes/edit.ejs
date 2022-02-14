@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!DOCTYPE html>
+    <html lang="en">
+      <%- include('../partials/head', { title: "Edit Recipe"})%>
+      <body>
+        <div class="container">
+          <h1 class="mb-4">New Recipe</h1>
+
+          <form action="/recipes/<%= recipe.id %>?_method=PUT" method="POST">
+            <%- include('../partials/formFields') %>
+          </form>
+        </div>
+        </div>
+      </body>
+    </html>
+  </head>
+</html>
