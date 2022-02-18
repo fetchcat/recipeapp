@@ -15,7 +15,10 @@
             <div>Prep Time</div>
             <i class="fa fa-clock"></i>
           </div>
-          <div class="card-body"><%- recipe.prepTime %></div>
+          <div class="card-body">
+            <% if(recipe.prepTime.length !== 0) { %> <%- recipe.prepTime %> <% }
+            else { %> N/A <% } %>
+          </div>
         </div>
         <div class="card col mx-3">
           <div
@@ -24,7 +27,10 @@
             <div>Bake Time</div>
             <i class="fa fa-clock"></i>
           </div>
-          <div class="card-body"><%- recipe.bakeTime %></div>
+          <div class="card-body">
+            <% if(recipe.bakeTime.length !== 0) { %> <%- recipe.bakeTime %> <% }
+            else { %> N/A <% } %>
+          </div>
         </div>
         <div class="card col">
           <div
@@ -33,7 +39,10 @@
             <div>Bake Temp</div>
             <i class="fa fa-temperature-high"></i>
           </div>
-          <div class="card-body"><%- recipe.bakeTemp %></div>
+          <div class="card-body">
+            <% if(recipe.bakeTemp.length !== 0) { %> <%- recipe.bakeTemp %> <% }
+            else { %> N/A <% } %>
+          </div>
         </div>
       </div>
       <div class="card mb-3">

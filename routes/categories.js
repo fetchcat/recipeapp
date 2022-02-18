@@ -36,7 +36,7 @@ router.delete("/:id", async (req, res) => {
   const del = await Category.findOne({ _id: req.params.id });
   if (del) {
     await Category.findByIdAndDelete(req.params.id);
-    res.redirect("/categories/list");
+    res.redirect("/categories/edit");
   }
 });
 
