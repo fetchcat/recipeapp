@@ -22,6 +22,8 @@ const port = process.env.PORT || 5000;
 const connectdb = require("./config/db");
 connectdb();
 
+// Populate Database if empty
+
 // EJS
 
 app.set("view engine", "ejs");
@@ -34,11 +36,10 @@ app.get("/", async (req, res) => {
   const recipes = await Recipe.find().sort({ createdAt: "desc" });
   const categories = await Category.find().sort({ name: "asc" });
   const first = await Category.findOne().sort({ name: "asc" });
-
   res.render("recipes/index", {
     recipes: recipes,
     categories: categories,
-    cat: first.name,
+    cat: first.name || "Uncategorized",
   });
 });
 
