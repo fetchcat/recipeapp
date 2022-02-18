@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!DOCTYPE html>
+    <html lang="en">
+      <%- include('../partials/head', { title: "Edit Categories"}) %>
+      <body>
+        <div class="container">
+          <h1 class="my-4">Add Categories</h1>
+          <h3>Existing Categories</h3>
+          <div class="my-3">
+            <ul class="list-group">
+            <% categories.forEach(function(category){ %>  
+                <li class="list-group-item py-3">
+                  <%- category.name, { categories: categories } %>
+                </li>
+            <% }) %>
+          </ul>
+          </div>
+          <div class="row">
+            <div class="col"><form action="" method="POST">
+              <div class="form-group mb-3">
+                <label for="new" class="d-flex justify-content-between align-items-center"><div>New Category</div> <i class="fa fa-plus mx-1"></i></label>
+                <input
+                  required
+                  value="<%= name %>"
+                  type="text"
+                  name="name"
+                  id="name"
+                  class="form-control"
+                />
+              </div>
+              <a href="/" class="btn btn-secondary"><i class="fa fa-arrow-left mx-1"></i>Cancel</a> <button type="submit" class="btn btn-success"><i class="fa fa-plus mx-1"></i> Add Category</button>
+            </form></div>
+          </div>
+        </div>
+        </div>
+      </body>
+    </html>
+  </head>
+</html>

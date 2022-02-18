@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!DOCTYPE html>
     <html lang="en">
-      <%- include('../partials/head', { title: "New Recipe"})%>
+      <%- include('../partials/head', { title: "New Recipe"}) %>
       <body>
         <div class="container">
-          <h1 class="mb-4">New Recipe</h1>
+          <h1 class="my-4">New Recipe</h1>
           <form action="/recipes" method="POST">
-            <%- include('../partials/formFields') %>
+            <%- include('../partials/formFields'), { categories: categories } %>
           </form>
         </div>
       </body>

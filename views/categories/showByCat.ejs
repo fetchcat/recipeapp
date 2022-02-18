@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/head', { title: "My Recipes"}) %>
+  <%- include('../partials/head', { title: "Category"}) %>
   <body>
     <div class="container">
       <h1 class="my-4 d-flex justify-content-between align-items-center">
@@ -9,13 +9,12 @@
           ><i class="fa fa-plus mx-1"></i> New Recipe
         </a>
       </h1>
-
       <h3 class="mt-5">Categories</h3>
       <div class="mb-5">
         <%- include('../partials/categories', { categories: categories }) %>
       </div>
-      <h3>New Recipes</h3>
-      <% recipes.forEach(recipe => { %>
+      <h3><%= cat.name %></h3>
+      <% if (recipes.length > 0) { %> <% recipes.forEach(recipe => { %>
       <div class="card mb-3">
         <div class="card-body">
           <h4 class="card-title"><%= recipe.title %></h4>
@@ -40,7 +39,19 @@
           </form>
         </div>
       </div>
-      <% }) %>
+      <div>
+        <a href="/" class="btn btn-secondary"
+          ><i class="fa fa-arrow-left mx-1"></i>Back</a
+        >
+      </div>
+      <% }) %> <% } else { %>
+      <div class="mb-3">No Entries found</div>
+      <div>
+        <a href="/" class="btn btn-secondary"
+          ><i class="fa fa-arrow-left mx-1"></i>Cancel</a
+        >
+      </div>
+      <% } %>
     </div>
   </body>
 </html>
