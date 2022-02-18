@@ -6,7 +6,7 @@ Recipe application with database integration. Add, modify, and delete recipes wi
 
 ### Git
 
-> git clone repository to your local machine or server
+> git clone repository (https://github.com/eraisuithiel/recipeapp.git) to your local machine or server.
 
 ### Install Packages
 
@@ -16,7 +16,7 @@ Recipe application with database integration. Add, modify, and delete recipes wi
 
 Create .env file in the /recipeapp directory and add the following:
 
-1. MONGODB_URI={ mongodb connection string }
+1. MONGO_URI={ mongodb connection string }
 2. PORT={server port}
 
 ### Deploy App
