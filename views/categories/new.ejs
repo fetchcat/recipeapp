@@ -32,8 +32,14 @@
                   class="form-control"
                 />
               </div>
-              <a href="/" class="btn btn-secondary"><i class="fa fa-arrow-left mx-1"></i>Cancel</a> <button type="submit" class="btn btn-success"><i class="fa fa-plus mx-1"></i> Add Category</button>
-            </form></div>
+              <a href="/" class="btn btn-secondary"><i class="fa fa-arrow-left mx-1"></i> Back</a> <button type="submit" class="btn btn-success"><i class="fa fa-plus mx-1"></i> Add Category</button>
+            </form>
+            <% if (message) { %>
+              <div class="alert alert-primary mt-3">
+                <%= message, { message: message} %>
+              </div>
+            <% } %>
+          </div>
           </div>
         </div>
         </div>

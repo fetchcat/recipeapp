@@ -8,11 +8,17 @@ function saveCategoryAndRedirect(path) {
     category.name = req.body.name;
     try {
       category = await category.save();
-      res.redirect("/categories/new");
+      const newCategories = await Category.find().sort({ name: "asc" });
+      res.render(`categories/new`, {
+        categories: newCategories,
+        name: category.name,
+        message: "Entry added successfully!",
+      });
     } catch (e) {
       res.render(`categories/${path}`, {
         categories: categories,
         name: category.name,
+        message: "Entry already exists",
       });
     }
   };

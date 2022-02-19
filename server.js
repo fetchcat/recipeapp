@@ -35,11 +35,17 @@ app.use(methodOverride("_method"));
 app.get("/", async (req, res) => {
   const recipes = await Recipe.find().sort({ createdAt: "desc" });
   const categories = await Category.find().sort({ name: "asc" });
-  const first = await Category.findOne().sort({ name: "asc" });
+
+  let first = new Category({ name: "Add a Category" });
+
+  categories.length > 0
+    ? (first = await Category.findOne().sort({ name: "asc" }))
+    : (first.name = "Add a category");
+
   res.render("recipes/index", {
     recipes: recipes,
     categories: categories,
-    cat: first.name || "Uncategorized",
+    cat: first.name,
   });
 });
 

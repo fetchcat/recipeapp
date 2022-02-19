@@ -17,7 +17,7 @@ router.get("/new", async (req, res) => {
   res.render("categories/new", {
     categories: categories,
     name: name,
-    message: "Add a new category",
+    message: "",
   });
 });
 
@@ -46,15 +46,6 @@ router.post(
   "/new",
   async (req, res, next) => {
     req.category = new Category();
-    const categoryExists = await Category.findOne({ name: req.body.name });
-    const categories = await Category.find().sort({ name: "asc" });
-    if (categoryExists !== null) {
-      res.render("categories/new", {
-        categories: categories,
-        message: "Entry already exists",
-        name: req.body.name,
-      });
-    }
     next();
   },
   saveCategoryAndRedirect("new")
